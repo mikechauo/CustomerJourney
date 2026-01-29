@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Client Application</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+    fieldset {
+      margin-bottom: 24px;
+      padding: 16px;
+    }
+    label {
+      display: block;
+      margin-top: 12px;
+    }
+    .description {
+      font-size: 0.9em;
+      color: #555;
+    }
+    button {
+      margin-top: 24px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Payment Gateway Application</h1>
+<p>Please complete the information below. This will be used to assess onboarding and integration readiness.</p>
+
+<form id="applicationForm">
+
+  <fieldset>
+    <legend>Business Information</legend>
+
+    <label>
+      Legal Business Name
+      <input type="text" name="businessName" required />
+    </label>
+
+    <label>
+      Website
+      <input type="url" name="website" />
+    </label>
+
+    <label>
+      Country of Operation
+      <input type="text" name="country" required />
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Transaction Types</legend>
+
+    <label>
+      <input type="checkbox" name="transactions" value="accounts_receivable" />
+      Accounts Receivable
+      <div class="description">Collecting money from someone</div>
+    </label>
+
+    <label>
+      <input type="checkbox" name="transactions" value="accounts_payable" />
+      Accounts Payable
+      <div class="description">Sending money to someone</div>
+    </label>
+
+    <label>
+      <input type="checkbox" name="transactions" value="fund_wallet" />
+      Fund Wallet
+      <div class="description">Send money to your virtual wallet</div>
+    </label>
+
+    <label>
+      <input type="checkbox" name="transactions" value="withdraw_wallet" />
+      Withdraw Wallet
+      <div class="description">Take money out of your virtual wallet</div>
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Expected Monthly Transaction Volume</legend>
+
+    <label>
+      Starting Monthly Volume ($)
+      <input type="number" name="volume_start" required />
+    </label>
+
+    <label>
+      Year 1 Monthly Volume ($)
+      <input type="number" name="volume_year_1" required />
+    </label>
+
+    <label>
+      Year 2 Monthly Volume ($)
+      <input type="number" name="volume_year_2" required />
+    </label>
+  </fieldset>
+
+  <button type="submit">Submit Application</button>
+</form>
+
+<script src="app.js"></script>
+</body>
+</html>
